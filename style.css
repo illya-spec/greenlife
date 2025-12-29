@@ -1,0 +1,676 @@
+/* Базові стилі */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9fbf9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Хедер */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d5a27;
+}
+
+.logo span {
+    color: #8dbb69;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    margin-left: 30px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav ul li a:hover {
+    color: #2d5a27;
+    transition: color 0.3s;
+    font-style: italic;
+}
+
+/* Слайдер */
+.slider-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.slide-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #8dbb69;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #2d5a27;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.5);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.next-btn { 
+    right: 20px; 
+    border-radius:10px;
+}
+.prev-btn { 
+    left: 20px;
+    border-radius:10px;
+}
+
+/* Секції */
+.section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 0px;
+    color: #2d5a27;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.product-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+/* Стилі для Футера */
+.footer {
+    background-color: #2d5a27;
+    color: white;
+    padding: 60px 0 20px;
+    margin-top: 0px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: left;
+}
+
+.footer h3 span, .footer h4 {
+    color: #8dbb69;
+}
+
+.footer h4 {
+    margin-bottom: 20px;
+}
+
+.footer-socials a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+    color: #8dbb69;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Стиль для кнопки в картці товару */
+.buy-btn {
+    width: 100%;
+    padding: 10px;
+    background: #2d5a27;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-family: inherit;
+    transition: background 0.3s;
+    font-size: large;
+}
+
+.buy-btn:hover {
+    background: #8dbb69;
+}
+.slide {
+    pointer-events: none;
+}
+
+.slide.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+/* Кружечок кошика */
+.cart-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #2d5a27;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1001;
+    transition: transform 0.3s;
+}
+
+.cart-widget:hover { transform: scale(1.1); }
+
+.cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #ff4444;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Модальне вікно (Фрейм) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none; /* Сховано за замовчуванням */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Форма замовлення */
+.order-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.submit-order {
+    width: 100%;
+    padding: 12px;
+    background: #2d5a27;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+header p{
+    margin-right: 50px;
+    margin-left: -100px;
+}
+/* Створюємо місце для руки через псевдоелемент */
+.footer-socials a::after {
+    content: "";
+    display: inline-block;
+    width: 20px;  /* Розмір іконки */
+    height: 20px;
+    background-image: url('https://assets.streamlinehq.com/image/private/w_512,h_512,ar_1/f_auto/v1/icons/2/gloved-hand-pointing-left-s9cf21cbflaz7m55wte9d.png/gloved-hand-pointing-left-hkiff6p6cauiz930jyl0m.png?_a=DATAg1AAZAA0');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 8px; /* Відступ від тексту */
+    
+    /* Початковий стан (невидимий та трохи зміщений) */
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+/* Ефект при наведенні (ховер) */
+.footer-socials a:hover {
+    color: #8dbb69; /* Зміна кольору тексту (опціонально) */
+}
+
+.footer-socials a:hover::after {
+    opacity: 1;
+    transform: translateX(0); /* Рука плавно "виїжджає" */
+}
+.advantages {
+    background: #f4f8f2;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.advantage-item {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.advantage-item:hover {
+    transform: translateY(-6px);
+}
+
+.advantage-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.advantage-item h3 {
+    color: #2d5a27;
+    margin-bottom: 10px;
+}
+.advantages {
+    background: #f4f8f2;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.advantage-item {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.advantage-item:hover {
+    transform: translateY(-6px);
+}
+
+.advantage-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    background: #e7f2df;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.advantage-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: #2d5a27;
+}
+
+.advantage-item h3 {
+    color: #2d5a27;
+    margin-bottom: 10px;
+}
+aside a{
+    text-decoration: none;
+    color:#698b4f;
+    font-weight: bold;
+    border-top: 1px solid #698b4f;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+aside{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #8dbb69;
+    padding-top: 10px;
+}
+.buy-btn::after{
+    content: "";
+    display: inline-block;
+    width: 0px;  /* Розмір іконки */
+    height: 20px;
+    background-image: url('https://assets.streamlinehq.com/image/private/w_512,h_512,ar_1/f_auto/v1/icons/2/gloved-hand-pointing-left-s9cf21cbflaz7m55wte9d.png/gloved-hand-pointing-left-hkiff6p6cauiz930jyl0m.png?_a=DATAg1AAZAA0');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 8px; /* Відступ від тексту */
+    
+    /* Початковий стан (невидимий та трохи зміщений) */
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+.buy-btn:hover::after{
+    opacity: 1;
+    width: 25px;
+    height: 20px;
+    transform: translateX(0); /* Рука плавно "виїжджає" */
+}
+s{
+    opacity: 0.5;
+    color: #8dbb69;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* відстань між іконкою і текстом */
+}
+
+.brand img {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d5a27;
+    display: flex;
+}
+
+.logo span {
+    color: #8dbb69;
+}
+.brand{
+    perspective: 100px;
+}
+
+#leaves {position:relative;top:-50px;width:100%;text-align: right;z-index: 333;}
+
+#leaves i {
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    background: linear-gradient(to bottom right, #309900, #005600);
+    transform: skew(20deg);
+    border-radius: 5% 40% 70%;
+    box-shadow: inset 0px 0px 1px #222;
+    border: 1px solid #333;
+    z-index: 1;
+    -webkit-animation: falling 5s 0s infinite;
+}
+
+#leaves i:nth-of-type(2n) { -webkit-animation: falling2 5s 0s infinite; }
+#leaves i:nth-of-type(3n) { -webkit-animation: falling3 5s 0s infinite; }
+
+#leaves i:before {
+  position: absolute;
+  content: '';
+  top: 117px;
+  right: 9px;
+  height: 27px;
+  width: 32px;
+  transform: rotate(49deg);
+  border-radius: 0% 15% 15% 0%;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  border-left: 0px solid #222;
+  border-right: 1px solid #222;
+  background: linear-gradient(to right, rgba(0,100,0,1), #005600);
+  z-index: 1;
+}
+
+#leaves i:after {
+  content: '';
+  height: 125px;
+  width: 10px;
+  background: linear-gradient(to right, rgba(0,0,0,.15), rgba(0,0,0,0));
+  display: block;
+  transform: rotate(125deg);
+  position: absolute;
+  left: 85px;
+  border-radius:50%;
+}
+
+
+#leaves i:nth-of-type(n)    { height:23px; width:30px; }
+#leaves i:nth-of-type(n):before { width:7px; height:5px; top:17px; right:1px; }
+#leaves i:nth-of-type(n):after { width:2px; height:17px; left: 12px; top:0px; }
+
+#leaves i:nth-of-type(2n+1)    { height:11px; width:16px; }
+#leaves i:nth-of-type(2n+1):before { width:4px; height:3px; top:7px; right:0px; }
+#leaves i:nth-of-type(2n+1):after { width:2px; height:6px; left: 5px; top:1px; }
+
+#leaves i:nth-of-type(3n+2)  { height:17px; width:23px; }
+#leaves i:nth-of-type(3n+2):before  { height:4px; width:4px; top:12px; right:1px; }
+#leaves i:nth-of-type(3n+2):after  { height:10px; width:2px; top:1px; left:8px; }
+
+#leaves i:nth-of-type(n)   { -webkit-animation-delay: 1.9s;}
+#leaves i:nth-of-type(2n)  { -webkit-animation-delay: 3.9s;}
+#leaves i:nth-of-type(3n)  { -webkit-animation-delay: 2.3s;}
+#leaves i:nth-of-type(4n)  { -webkit-animation-delay: 4.4s;}
+#leaves i:nth-of-type(5n)  { -webkit-animation-delay: 5s;  }
+#leaves i:nth-of-type(6n)  { -webkit-animation-delay: 3.5s;}
+#leaves i:nth-of-type(7n)  { -webkit-animation-delay: 2.8s;}
+#leaves i:nth-of-type(8n)  { -webkit-animation-delay: 1.5s;}
+#leaves i:nth-of-type(9n)  { -webkit-animation-delay: 3.3s;}
+#leaves i:nth-of-type(10n) { -webkit-animation-delay: 2.5s;}
+#leaves i:nth-of-type(11n) { -webkit-animation-delay: 1.2s;}
+#leaves i:nth-of-type(12n) { -webkit-animation-delay: 4.1s;}
+#leaves i:nth-of-type(13n) { -webkit-animation-delay: 1s;  }
+#leaves i:nth-of-type(14n) { -webkit-animation-delay: 4.7s;}
+#leaves i:nth-of-type(15n) { -webkit-animation-delay: 3s;  }
+
+#leaves i:nth-of-type(n)    { background: linear-gradient(to bottom right, #309900, #005600); }
+#leaves i:nth-of-type(2n+2)  { background: linear-gradient(to bottom right, #5e9900, #2b5600); }
+#leaves i:nth-of-type(4n+1)  { background: linear-gradient(to bottom right, #990, #564500); }
+
+#leaves i:nth-of-type(n)    { opacity: .7;}
+#leaves i:nth-of-type(3n+1)  { opacity: .5;}
+#leaves i:nth-of-type(3n+2)  { opacity: .3;}
+
+#leaves i:nth-of-type(n)    {transform: rotate(180deg);}
+
+
+#leaves i:nth-of-type(n) { -webkit-animation-timing-function:ease-in-out;}
+
+@-webkit-keyframes falling {
+    
+    0% {
+        -webkit-transform:
+            translate3d(300,0,0)
+            rotate(0deg);
+    }
+    
+    100% {
+        -webkit-transform:
+            translate3d(-350px,700px,0)
+            rotate(90deg);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes falling3 {
+     0% {
+        -webkit-transform:
+            translate3d(0,0,0)
+            rotate(-20deg);
+    }
+    
+    100% {
+        -webkit-transform:
+            translate3d(-230px,640px,0)
+            rotate(-70deg);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes falling2 {
+     0% {
+        -webkit-transform:
+            translate3d(0,0,0)
+            rotate(90deg);
+    }
+    
+    100% {
+        -webkit-transform:
+            translate3d(-400px,680px,0)
+            rotate(0deg);
+        opacity: 0;
+    }
+}
+select{
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 5px solid #2d5a27;
+    border-radius: 10px;
+    font-family:'Montserrat', sans-serif;
+}
+input{
+    font-family:'Montserrat', sans-serif;
+}
+button{
+    font-family:'Montserrat', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+@media (max-width:1100px) {
+    header p{
+        display: none;
+    }
+}
+@media (max-width:770px) {
+    nav{
+        display: none;
+    }
+    .prev-btn{
+        display: none;
+    }
+    .next-btn{
+        display: none;
+    }
+}
